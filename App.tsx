@@ -1,21 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { Provider } from "react-redux";
+import { store } from "~/redux";
+import Main from "~/pages/Main";
+import useCachedResources from "~/hooks/useCachedResources";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const isLoadingComplete = useCachedResources();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  if (!isLoadingComplete) {
+    return null;
+  } else {
+    return (
+      <Provider store={store}>
+        <StatusBar translucent backgroundColor="transparent" />
+        <Main />
+      </Provider>
+    );
+  }
+}
