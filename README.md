@@ -7,7 +7,7 @@
 
 ## Instalação
 
-###### Para executar a versão publicada, deve-se instalar o aplicativo do Expo Go, dentro do app selecionar "Scan QR Code" e apontar a camera para o QRCode presente no link da publicação.
+###### Para executar a versão publicada, deve-se instalar o aplicativo do Expo Go, dentro do app selecionar "Scan QR Code" e apontar a camera para o QRCode presente no link da publicação, ou escolher a opção de "Request a link" e receber o link do app em seu e-mail ou celular.
 ###### Caso queira executar o projeto de forma local, os passos seriam:
 - Clonar projeto.
 - Executar "yarn" para baixar as dependencias.
