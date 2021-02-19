@@ -2,11 +2,11 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { Provider } from "react-redux";
 import { store } from "~/redux";
-import Main from "~/pages/Main";
-import useCachedResources from "~/hooks/useCachedResources";
+import Login from "~/pages/Login";
+import useLoadResources from "~/hooks/useLoadResources";
 
 export default function App() {
-  const isLoadingComplete = useCachedResources();
+  const [isLoadingComplete, deviceType] = useLoadResources();
 
   if (!isLoadingComplete) {
     return null;
@@ -14,7 +14,7 @@ export default function App() {
     return (
       <Provider store={store}>
         <StatusBar translucent backgroundColor="transparent" />
-        <Main />
+        <Login deviceType={deviceType} />
       </Provider>
     );
   }

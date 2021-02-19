@@ -1,5 +1,4 @@
 import React from "react";
-import { TextInputProps } from "react-native";
 import {
   Container,
   Label,
@@ -8,13 +7,9 @@ import {
   MessageError,
   ErrorIcon,
 } from "./styles";
+import { TextInputType } from "~/consts/interfaces";
 
-export interface Props extends TextInputProps {
-  label: string;
-  messageError?: string;
-}
-
-const TextInput: React.FC<Props> = ({
+const TextInput: React.FC<TextInputType> = ({
   label = "E-MAIL",
   messageError,
   ...props

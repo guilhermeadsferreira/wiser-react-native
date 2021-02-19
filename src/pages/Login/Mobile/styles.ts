@@ -3,18 +3,13 @@ import {
   get_height_percentage_to_dp,
   get_width_percentage_to_dp,
 } from "~/helpers/get_dimensions";
-import { PRIMARY_DARK, PRIMARY_LIGHT } from "../../consts/colors";
-import { MS_REGULAR, MS_SEMIBOLD } from "../../consts/font-family";
-import { FS_12PX, FS_14PX, FS_24PX } from "../../consts/font-size";
+import { PRIMARY_DARK, PRIMARY_LIGHT } from "~/consts/colors";
+import { MS_REGULAR, MS_SEMIBOLD } from "~/consts/font-family";
+import { FS_12PX, FS_14PX, FS_24PX } from "~/consts/font-size";
 import { LinearGradient } from "expo-linear-gradient";
 import { GRADIENT_COLOR } from "~/consts/colors";
 import { FS_16PX } from "~/consts/font-size";
-import { TextProps } from "react-native";
-
-interface TextType extends TextProps {
-  marginTop?: number;
-  underline?: boolean;
-}
+import { TextType } from "~/consts/interfaces";
 
 export const ImageBackground = styled.ImageBackground.attrs({
   source: require("~/assets/images/Background.png"),
@@ -29,7 +24,8 @@ export const Form = styled.View`
   width: ${get_width_percentage_to_dp("86%")}px;
   background-color: #fff;
   border-radius: 8px;
-  padding: ${get_height_percentage_to_dp("3%")}px 0px
+  padding: ${get_height_percentage_to_dp("3%")}px
+    ${get_height_percentage_to_dp("3.5%")}px
     ${get_height_percentage_to_dp("8.5%")}px;
 `;
 
@@ -80,6 +76,7 @@ export const RecoveryPassword = styled.Text<TextType>`
   font-family: ${MS_REGULAR};
   font-size: ${FS_14PX};
   color: #fff;
-  margin-top: ${(props) => props.marginTop ?? 0}px;
+  margin-top: ${(props) =>
+    props.marginTop ? get_height_percentage_to_dp(`${props.marginTop}%`) : 0}px;
   text-decoration: ${(props) => (props.underline ? "underline" : "none")};
 `;

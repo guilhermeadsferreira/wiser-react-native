@@ -1,4 +1,3 @@
-import { Keyboard } from "react-native";
 import { call, put, delay } from "redux-saga/effects";
 import api from "~/services/api";
 
@@ -11,13 +10,11 @@ export function* handleAuth({ payload }) {
       password: payload.password,
     });
 
-    yield delay(600);
+    yield delay(300);
 
     yield put(loadSucess());
   } catch (err) {
-    yield delay(600);
+    yield delay(300);
     yield put(loadFailure());
-  } finally {
-    Keyboard.dismiss();
   }
 }

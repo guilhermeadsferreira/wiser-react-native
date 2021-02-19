@@ -8,13 +8,10 @@ import {
 } from "~/helpers/get_dimensions";
 import { ERROR_COLOR } from "~/consts/colors";
 import { FS_10PX, FS_12PX } from "~/consts/font-size";
-
-interface ViewType extends ViewProps {
-  messageError?: string;
-}
+import { ViewType } from "~/consts/interfaces";
 
 export const Container = styled.View`
-  width: 85%;
+  width: 100%;
   align-self: center;
   margin-top: ${get_height_percentage_to_dp("2.5%")}px;
 `;
@@ -38,7 +35,7 @@ export const InputContainer = styled.View<ViewType>`
 `;
 
 export const Input = styled.TextInput`
-  padding: 10px 10px 10px;
+  padding: ${get_width_percentage_to_dp("2.5%")}px;
   font-family: ${MS_REGULAR};
   font-size: ${FS_12PX};
   flex: 1;
