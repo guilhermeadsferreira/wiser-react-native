@@ -24,7 +24,6 @@ export const handle_submit_form = ({ form, setFormErrors, dispatch }) => {
       dispatch(loadRequest({ ...form }));
     })
     .catch((err) => {
-      console.log(err.errors);
       err.errors.map((error) => set_message_error(error, setFormErrors));
     });
 };

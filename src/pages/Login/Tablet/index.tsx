@@ -21,7 +21,7 @@ import { GRADIENT_COLOR } from "~/consts/colors";
 import { MS_SEMIBOLD } from "~/consts/font-family";
 import { AUTH_SUCCESS, AUTH_FAILURE } from "~/consts/messages";
 import { handle_submit_form } from "~/helpers/validation_auth_form";
-import WrapperDismissKeyboard from "~/components/WrapperDismissKeyboard";
+import WrapperKeyboardAvoidingView from "~/components/WrapperKeyboardAvoidingView";
 
 const LoginTablet: React.FC = () => {
   const dispatch = useDispatch();
@@ -50,7 +50,7 @@ const LoginTablet: React.FC = () => {
   }, [error, isLogged, loading]);
 
   return (
-    <WrapperDismissKeyboard>
+    <WrapperKeyboardAvoidingView>
       <Container>
         <Logo />
         <ContainerForm>
@@ -116,7 +116,7 @@ const LoginTablet: React.FC = () => {
           </Form>
         </ContainerForm>
       </Container>
-    </WrapperDismissKeyboard>
+    </WrapperKeyboardAvoidingView>
   );
 };
 

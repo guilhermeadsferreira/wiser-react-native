@@ -16,7 +16,7 @@ import TextInput from "~/components/TextInput";
 import { ApplicationState } from "~/redux";
 import { AUTH_SUCCESS, AUTH_FAILURE } from "~/consts/messages";
 import { handle_submit_form } from "~/helpers/validation_auth_form";
-import WrapperDismissKeyboard from "~/components/WrapperDismissKeyboard";
+import WrapperKeyboardAvoidingView from "~/components/WrapperKeyboardAvoidingView";
 
 const LoginMobile = () => {
   const dispatch = useDispatch();
@@ -45,7 +45,7 @@ const LoginMobile = () => {
   }, [error, isLogged, loading]);
 
   return (
-    <WrapperDismissKeyboard>
+    <WrapperKeyboardAvoidingView>
       <ImageBackground>
         <Form>
           <WelcomeText>Olá, seja</WelcomeText>
@@ -96,7 +96,7 @@ const LoginMobile = () => {
           </RecoveryPassword>
         </TouchableRecoveryPassword>
       </ImageBackground>
-    </WrapperDismissKeyboard>
+    </WrapperKeyboardAvoidingView>
   );
 };
 
